@@ -51,19 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // инициализация .tabs как табов
   new ItcTabs('.tabs');
 });
-document.addEventListener("DOMContentLoaded", function () {
-  // Sticky nav
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 2) {
-      $('.nav').addClass("sticky");
-    }
-    else {
-      $('.nav').removeClass("sticky");
-    }
-  });
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Sticky nav
+//   $(window).scroll(function () {
+//     if ($(this).scrollTop() > 2) {
+//       $('.nav').addClass("sticky");
+//     }
+//     else {
+//       $('.nav').removeClass("sticky");
+//     }
+//   });
 
 
-});
+// });
 document.addEventListener("DOMContentLoaded", function () {
   var blackEl = $('.main, .item__block, .main__block, .art, .team, .news'), // Берем темные элементы
     header = $('.nav'),
@@ -144,6 +144,23 @@ document.addEventListener('DOMContentLoaded', function () {
       delay: 4000,
       disableOnInteraction: false,
     },
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  // Scroll
+  $('.go_to').click(function () { // ловим клик по ссылке с классом go_to
+    var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+    if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+      $('html, body').animate({ scrollTop: $(scroll_el).offset().top - 50 }, 800); // анимируем скроолинг к элементу scroll_el
+    }
+    return false; // выключаем стандартное действие
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  $('.menu li a').click(function (event) {
+    $('.menu-btn').toggleClass('active');
+    $('.menu').toggleClass('active');
+    return false;
   });
 });
 document.addEventListener("DOMContentLoaded", () => {

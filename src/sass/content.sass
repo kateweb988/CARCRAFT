@@ -57,7 +57,6 @@ input:-moz-placeholder, textarea:-moz-placeholder
    display: none
 .nav 
    padding: 45px 0 
-   position: fixed
    top: 0
    left: 0
    width: 100%
@@ -89,7 +88,7 @@ input:-moz-placeholder, textarea:-moz-placeholder
       &:hover 
          color: $green
 .header
-   padding-top: 106px
+   padding-top: 0px
    &__back 
       display: flex
       align-items: center
@@ -115,10 +114,10 @@ input:-moz-placeholder, textarea:-moz-placeholder
          font-weight: 700
          line-height: 45px
    &__box 
-      position: fixed
       max-width: 1464px
+      position: relative
       z-index: 0
-      top: 80px
+      width: 100%
       margin: 134px 0 78px 
       &.pp 
          opacity: 0
@@ -162,7 +161,6 @@ section
    background: rgba(255, 255, 255, 1)
    max-width: 1728px 
    margin: 0 auto
-   margin-top: 700px
    position: relative
    z-index: 2
    width: 100%
